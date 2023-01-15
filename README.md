@@ -7,5 +7,5 @@ I use:
 - Nvim - as my daily driver, I use it for python, flutter, C/C++, CUDA/OpenCL
 - Fish - as my shell
 
-> All config files and folders are for linux and I haven't tested them for windows neither I am interested to test them for that OS.
+> All config files and folders are for 👑 Linux and I haven't tested them for windows, macOS or other proprietary opearting systems so please edit the OS specific sections if you desire to use these on any of windows or macOS.
 
