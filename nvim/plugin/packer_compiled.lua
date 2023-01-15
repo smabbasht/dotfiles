@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/smabbasht/.local/share/nvim/site/pack/packer/start/fidget.nvim",
     url = "https://github.com/j-hui/fidget.nvim"
   },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/home/smabbasht/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/smabbasht/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
@@ -144,6 +149,11 @@ _G.packer_plugins = {
     path = "/home/smabbasht/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-transparent"] = {
+    loaded = true,
+    path = "/home/smabbasht/.local/share/nvim/site/pack/packer/start/nvim-transparent",
+    url = "https://github.com/xiyaowong/nvim-transparent"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/smabbasht/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -183,6 +193,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/smabbasht/.local/share/nvim/site/pack/packer/start/tokyodark.nvim",
     url = "https://github.com/tiagovla/tokyodark.nvim"
+  },
+  undotree = {
+    loaded = true,
+    path = "/home/smabbasht/.local/share/nvim/site/pack/packer/start/undotree",
+    url = "https://github.com/mbbill/undotree"
   },
   ["vim-fugitive"] = {
     loaded = true,

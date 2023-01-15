@@ -1,3 +1,6 @@
+-- This file is a modified version of kickstart.lua from the OpenOS project.
+
+
 -- Install packer
 local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 local is_bootstrap = false
@@ -25,7 +28,7 @@ require('packer').startup(function(use)
       'folke/neodev.nvim',
     },
   }
-  
+
   -- use ()
   use { -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -43,28 +46,59 @@ require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter-textobjects',
     after = 'nvim-treesitter',
   }
+  ---------------------------------------------------------------------------
+
 
   -- Plugins I installed
   -- use 'nvim-tree/nvim-web-devicons'
   use 'github/copilot.vim'
+  use 'rafamadriz/friendly-snippets'
   use 'tiagovla/tokyodark.nvim'
+  use 'xiyaowong/nvim-transparent'
+  use 'mbbill/undotree'
 
-  -- Cinfigurations I added
+  -- Path for python
+  vim.g.python3_host_prog = '/usr/bin/python3'
+
+  -- Browse Files
+  vim.keymap.set('n', '<leader>bf', vim.cmd.Ex)
+  vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+
+  -- Toggle Transparency
+  vim.keymap.set('n', '<leader>tt', vim.cmd.TransparentToggle, { silent = true }) -- toggle transparent
+  -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" }) -- transparent background
+  -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" }) -- transparent background
+
+  -- Vim Commands
+  vim.opt.incsearch = true -- search as you type
+  vim.opt.hlsearch = true -- highlight search results
   vim.cmd [[set cursorline]]
   vim.cmd [[set relativenumber]]
   vim.cmd [[set scrolloff=5]]
+
+  -- Colorscheme
   vim.cmd [[colorscheme tokyodark]]
-  vim.o.termguicolors = true
-  vim.g.tokyodark_transparent_background = true
   vim.g.tokyodark_enable_italic = true
   vim.g.tokyodark_enable_bold = true
-  vim.g.tokyodark_sidebars = { 'qf', 'vista_kind', 'terminal', 'packer' }
+  -- vim.o.termguicolors = true
+  -- vim.g.tokyodark_transparent_background = true
+  -- vim.g.tokyodark_sidebars = { 'qf', 'vista_kind', 'terminal', 'packer' }
+
+  -- Primeagen's remaps
+  vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]]) -- copy to system clipboard
+  vim.keymap.set("n", "<leader>Y", [["+Y]]) -- copy to system clipboard
+
+  vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- search and replace 
+  vim.keymap.set("n", "<leader>f", vim.lsp.buf.format) -- [f]ormat the Buffer
+
+  vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>") -- Open previous sessions through tmux 
+  -------------------------------------------------------------------------------------------------
 
   -- Git related plugins
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
   use 'lewis6991/gitsigns.nvim'
-  
+
   -- use 'navarasu/onedark.nvim' -- Theme inspired by Atom
   use 'nvim-lualine/lualine.nvim' -- Fancier statusline
   use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
@@ -165,6 +199,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+
 -- Set lualine as statusline
 -- See `:help lualine.txt`
 require('lualine').setup {
@@ -213,7 +248,6 @@ require('telescope').setup {
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
-
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })

@@ -10,11 +10,11 @@ format = " took [$duration]($style)"
 
 [directory]
 truncation_length = 5
-format = "[$path]($style)[$lock_symbol]($lock_style) "
+format = "[$path]($style)[$lock_symbol]($lock_style)"
 
 [git_branch]
 format = " [$symbol$branch]($style) "
-symbol = "🍣 "
+symbol = "🌱 "
 style = "bold yellow"
 
 [git_commit]
@@ -28,6 +28,10 @@ format = '[\($state( $progress_current of $progress_total)\)]($style) '
 disabled = true
 
 [python]
+format = "[$symbol$version]($style) "
+style = "bold green"
+
+[dart]
 format = "[$symbol$version]($style) "
 style = "bold green"
 

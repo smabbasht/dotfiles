@@ -1,4 +1,4 @@
-set -U fish_greeting "-🐟-🐟-🐟-🐟-🐟-🐟-🐟-"
+set -U fish_greeting ""
 
 set randNum (random 2 2 212)
 #echo $randNum
@@ -29,3 +29,6 @@ end
 
 # Call the prompt function
 prompt
+
+# Starship
+starship init fish | source
