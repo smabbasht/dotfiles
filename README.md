@@ -4,8 +4,8 @@ I have curated a neat UI with natural keybindings and aliases, if you guys would
 
 I use:
 - Kitty - as my GPU accelerated terminal emulator
-- Nvim - as my daily driver, I use it for python, flutter, C/C++, CUDA/OpenCL
+- Nvim - as my daily driver, configured for python, flutter, C/C++, CUDA/OpenCL, LaTeX, Markdown
 - Fish - as my shell
 
-> All config files and folders are for 👑 Linux and I haven't tested them for windows, macOS or other proprietary operating systems so please edit the OS specific sections if you desire to use them
+> All config files and folders are for Linux and I haven't tested them for windows, macOS or other proprietary operating systems so please edit the OS specific sections if you desire to use them
 
