@@ -56,6 +56,9 @@ require('packer').startup(function(use)
   use 'tiagovla/tokyodark.nvim'
   use 'xiyaowong/nvim-transparent'
   use 'mbbill/undotree'
+  use 'lervag/vimtex' -- LaTeX support 
+  
+  -- settings for vimTeX 
 
   -- Path for python
   vim.g.python3_host_prog = '/usr/bin/python3'
@@ -89,7 +92,7 @@ require('packer').startup(function(use)
   vim.keymap.set("n", "<leader>Y", [["+Y]]) -- copy to system clipboard
 
   vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- search and replace 
-  vim.keymap.set("n", "<leader>f", vim.lsp.buf.format) -- [f]ormat the Buffer
+  vim.keymap.set("n", "<F5>", vim.lsp.buf.format) -- [f]ormat the Buffer
 
   vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>") -- Open previous sessions through tmux 
   -------------------------------------------------------------------------------------------------

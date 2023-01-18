@@ -6,11 +6,11 @@ error_symbol   = "💀"
 
 [cmd_duration]
 min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
-format = " took [$duration]($style)"
+format = "took [$duration]($style)"
 
 [directory]
 truncation_length = 5
-format = "[$path]($style)[$lock_symbol]($lock_style)"
+format = "in [$path]($style)[$lock_symbol]($lock_style) "
 
 [git_branch]
 format = " [$symbol$branch]($style) "
@@ -40,6 +40,7 @@ format = "[$symbol$version]($style) "
 style = "bold green"
 
 [username]
+format = "[$user]($style) "
 style_user = "bold dimmed blue"
 show_always = true
 

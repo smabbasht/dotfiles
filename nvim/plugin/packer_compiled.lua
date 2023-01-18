@@ -213,6 +213,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/smabbasht/.local/share/nvim/site/pack/packer/start/vim-sleuth",
     url = "https://github.com/tpope/vim-sleuth"
+  },
+  vimtex = {
+    loaded = true,
+    path = "/home/smabbasht/.local/share/nvim/site/pack/packer/start/vimtex",
+    url = "https://github.com/lervag/vimtex"
   }
 }
 
