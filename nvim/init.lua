@@ -46,9 +46,11 @@ require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter-textobjects',
     after = 'nvim-treesitter',
   }
-  ------- plugins --------------------------------------------------------------------
-  --    Plugins I installed 
-  ------- plugins_--------------------------------------------------------------------
+  ---- plugins --------------------------------------------------------------------
+  
+  --          Plugins I installed 
+  
+  ---- plugins_--------------------------------------------------------------------
 
   -- use 'nvim-tree/nvim-web-devicons'
   use 'github/copilot.vim'
@@ -63,6 +65,9 @@ require('packer').startup(function(use)
   --   'marioortizmanero/adoc-pdf-live.nvim',
   --   config = "require('adoc_pdf_live').setup()"
   -- }
+  --
+  ---------- Other Minor Cofigurations (this code block works only here right now, will fix it hopefuly) ------------
+  --
   -- Path for python
   vim.g.python3_host_prog = '/usr/bin/python3'
 
@@ -174,7 +179,7 @@ vim.g.maplocalleader = ' '
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
--- Remap for dealing with word wrap
+-- Keymap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
@@ -326,7 +331,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
 ---- Config ------------------------------------------------------------- 
 
---        Configurations I wrote for my persona use 
+--        Configurations I wrote for my personal use  
 
 ---- Config_ ------------------------------------------------------------
 
@@ -357,15 +362,16 @@ vim.keymap.set('n', '<leader>tt', vim.cmd.TransparentToggle, { silent = true }) 
 -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" }) -- transparent background
 -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" }) -- transparent background
 
--- Primeagen's remaps
+-- Keymap to copy to system clipboard
+vim.keymap.set("v", "<leader>y", ":w !xclip -i -sel c\n<leader>") -- copy to system clipboard
+--
+-- Primeagen's Keymaps
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- search and replace
 vim.keymap.set("n", "<F5>", vim.lsp.buf.format) -- [f]ormat the Buffer
 
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>") -- Open previous sessions through tmux
 
 
--- My remap to copy to system clipboard
-vim.keymap.set("v", "<leader>y", ":w !xclip -i -sel c\n<leader>") -- copy to system clipboard
 --
 -- LaTeX related settings
 -- require('adoc_pdf_live').setup()
