@@ -46,31 +46,25 @@ require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter-textobjects',
     after = 'nvim-treesitter',
   }
-  ---------------------------------------------------------------------------
+  ------- plugins --------------------------------------------------------------------
+  --    Plugins I installed 
+  ------- plugins_--------------------------------------------------------------------
 
-
-  -- Plugins I installed
   -- use 'nvim-tree/nvim-web-devicons'
   use 'github/copilot.vim'
-  use 'rafamadriz/friendly-snippets'
+  -- use 'rafamadriz/friendly-snippets'
   use 'tiagovla/tokyodark.nvim'
   use 'xiyaowong/nvim-transparent'
   use 'mbbill/undotree'
-  use 'lervag/vimtex' -- LaTeX support 
-  
-  -- settings for vimTeX 
-
+  use 'windwp/nvim-autopairs'
+  use 'tpope/vim-surround' 
+  use 'lervag/vimtex' -- LaTeX support
+  -- use {
+  --   'marioortizmanero/adoc-pdf-live.nvim',
+  --   config = "require('adoc_pdf_live').setup()"
+  -- }
   -- Path for python
   vim.g.python3_host_prog = '/usr/bin/python3'
-
-  -- Browse Files
-  vim.keymap.set('n', '<leader>bf', vim.cmd.Ex)
-  vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
-
-  -- Toggle Transparency
-  vim.keymap.set('n', '<leader>tt', vim.cmd.TransparentToggle, { silent = true }) -- toggle transparent
-  -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" }) -- transparent background
-  -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" }) -- transparent background
 
   -- Vim Commands
   vim.opt.incsearch = true -- search as you type
@@ -78,6 +72,7 @@ require('packer').startup(function(use)
   vim.cmd [[set cursorline]]
   vim.cmd [[set relativenumber]]
   vim.cmd [[set scrolloff=5]]
+  -- vim.cmd [[TransparentEnable]]
 
   -- Colorscheme
   vim.cmd [[colorscheme tokyodark]]
@@ -87,15 +82,7 @@ require('packer').startup(function(use)
   -- vim.g.tokyodark_transparent_background = true
   -- vim.g.tokyodark_sidebars = { 'qf', 'vista_kind', 'terminal', 'packer' }
 
-  -- Primeagen's remaps
-  vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]]) -- copy to system clipboard
-  vim.keymap.set("n", "<leader>Y", [["+Y]]) -- copy to system clipboard
-
-  vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- search and replace 
-  vim.keymap.set("n", "<F5>", vim.lsp.buf.format) -- [f]ormat the Buffer
-
-  vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>") -- Open previous sessions through tmux 
-  -------------------------------------------------------------------------------------------------
+ --------x plugins x-----------------------------------------------------------------------------------------------
 
   -- Git related plugins
   use 'tpope/vim-fugitive'
@@ -248,7 +235,6 @@ require('telescope').setup {
     },
   },
 }
-
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
 -- See `:help telescope.builtin`
@@ -336,6 +322,57 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
+
+
+---- Config ------------------------------------------------------------- 
+
+--        Configurations I wrote for my persona use 
+
+---- Config_ ------------------------------------------------------------
+
+-- Setups for Plgins 
+
+require('nvim-autopairs').setup()
+-- require('nvim-autopairs.completion.cmp').setup({
+--   map_cr = true, --  map <CR> on insert mode
+--   map_complete = true, -- it will auto insert `(` after select function or method item
+--   auto_select = true, -- automatically select the first item
+-- })
+-- setup for vim-surround 
+-- require('vim-surround').setup({
+--   mappings_style = 'surround',
+-- })
+
+-- Switch Buffers
+
+vim.keymap.set('n', '<leader><Right>', vim.cmd.bnext)
+vim.keymap.set('n', '<leader><Left>', vim.cmd.bprevious)
+
+-- Browse Files
+vim.keymap.set('n', '<leader>bf', vim.cmd.Ex)
+vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+
+-- Toggle Transparency
+vim.keymap.set('n', '<leader>tt', vim.cmd.TransparentToggle, { silent = true }) -- toggle transparent
+-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" }) -- transparent background
+-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" }) -- transparent background
+
+-- Primeagen's remaps
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- search and replace
+vim.keymap.set("n", "<F5>", vim.lsp.buf.format) -- [f]ormat the Buffer
+
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>") -- Open previous sessions through tmux
+
+
+-- My remap to copy to system clipboard
+vim.keymap.set("v", "<leader>y", ":w !xclip -i -sel c\n<leader>") -- copy to system clipboard
+--
+-- LaTeX related settings
+-- require('adoc_pdf_live').setup()
+-- vim.keymap.set("n", "<leader>lt", vim.cmd.AdocPdfLiveStart) -- Open previous sessions through tmux
+--
+-----x Config x-----------------------------------------------------------
+
 
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
@@ -474,6 +511,8 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
