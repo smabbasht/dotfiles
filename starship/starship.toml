@@ -1,0 +1,46 @@
+# ~/.config/starship.toml
+
+[character]
+success_symbol = "🐟"
+error_symbol   = "💀"
+
+[cmd_duration]
+min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
+format = "took [$duration]($style)"
+
+[directory]
+truncation_length = 10 
+format = "in [$path]($style)[$lock_symbol]($lock_style) "
+
+[git_branch]
+format = " [$symbol$branch]($style) "
+symbol = "🌱 "
+style = "bold yellow"
+
+[git_commit]
+commit_hash_length = 8
+style = "bold white"
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+
+[package]
+disabled = true
+
+[python]
+format = "[$symbol$version]($style) "
+style = "bold green"
+
+[dart]
+format = "[$symbol$version]($style) "
+style = "bold green"
+
+[rust]
+format = "[$symbol$version]($style) "
+style = "bold green"
+
+[username]
+format = "[$user]($style) "
+style_user = "bold dimmed blue"
+show_always = true
+
