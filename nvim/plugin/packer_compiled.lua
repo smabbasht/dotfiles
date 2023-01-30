@@ -166,6 +166,11 @@ _G.packer_plugins = {
     path = "/home/smabbasht/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textobjects",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
   },
+  ["onedarkpro.nvim"] = {
+    loaded = true,
+    path = "/home/smabbasht/.local/share/nvim/site/pack/packer/start/onedarkpro.nvim",
+    url = "https://github.com/olimorris/onedarkpro.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/smabbasht/.local/share/nvim/site/pack/packer/start/packer.nvim",
