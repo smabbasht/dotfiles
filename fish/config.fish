@@ -32,3 +32,9 @@ prompt
 
 # Starship
 starship init fish | source
+
+# Zoxide
+zoxide init fish | source
+
+# Vim Mode
+fish_vi_key_bindings
