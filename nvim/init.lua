@@ -61,6 +61,8 @@ require('packer').startup(function(use)
   use 'windwp/nvim-autopairs'
   use 'tpope/vim-surround' 
   use 'lervag/vimtex' -- LaTeX support
+  use 'lervag/vimtex' -- LaTeX support
+  use 'olimorris/onedarkpro.nvim'
   -- use {
   --   'marioortizmanero/adoc-pdf-live.nvim',
   --   config = "require('adoc_pdf_live').setup()"
@@ -200,6 +202,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 require('lualine').setup {
   options = {
     icons_enabled = false,
+    theme = 'tokyodark',
     theme = 'tokyodark',
     component_separators = '|',
     section_separators = '',

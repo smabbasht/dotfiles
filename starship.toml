@@ -10,10 +10,10 @@ format = "took [$duration]($style)"
 
 [directory]
 truncation_length = 10 
-format = "in [$path]($style)[$lock_symbol]($lock_style) "
+format = "is in [$path]($style)[$lock_symbol]($lock_style) "
 
 [git_branch]
-format = " [$symbol$branch]($style) "
+format = "at [$symbol$branch]($style) "
 symbol = "🌱 "
 style = "bold yellow"
 
