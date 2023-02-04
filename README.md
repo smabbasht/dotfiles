@@ -54,7 +54,7 @@ setup the environment for your next language if you wish to.
 
 ### Other Configurations
 
-Here I have listed other productivity configurations aside <br>
+Here I have listed other productivity configurations aside from the .config folder <br>
 - In i3, enable Natural Scrolling and Tap to click by adding the lines with Option keyword in the snippet below, it would look something like this;
 
 ```
