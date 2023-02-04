@@ -22,8 +22,8 @@ systems so please edit the OS specific sections if you desire to use these on th
 - .tmux.conf should be in your home folder, the path should be this (~/.tmux.conf), I know you can force source other 
 locations but that appeared to be inconsistent to me and I have to do it repeatedly, therefore it's good to put it there, I have 
 made a hard link of the two files so both the locations essentially point to the same file.
-- Neovim version must be atleast 0.6 so the the version 'apt' ships on Ubuntu may not be able to run the configurations. 
-On Ubuntu you coudl alternatively install Neovim through ppa with these commands <br> 
+- Neovim version must be atleast 0.7 so the the version 'apt' ships on Ubuntu may not be able to run the configurations. 
+On Ubuntu or other Debian based distros you could alternatively install Neovim through ppa with these commands <br> 
 ```
 sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:neovim-ppa/stable
@@ -31,7 +31,7 @@ sudo apt-get update
 sudo apt-get install neovim
 ```
 - For the Github copilot to run on neovim, it requires node version to be below 18 and above 16, I use it with v17.9.0 and it works 
-fine, you can downgrade your node version by running the commands below, nodejs and npm is required, which can be installed with can
+fine, you can downgrade or upgrade your node version by running the commands below, nodejs and npm is required, which can
 be installed with pacman, dnf, apt etc. based on your OS and distro.
 ```
 sudo pacman -S nodejs npm
@@ -55,7 +55,7 @@ setup the environment for your next language if you wish to.
 ### Other Configurations
 
 Here I have listed other productivity configurations aside <br>
-- For i3, enable Natural Scrolling and Tap to click by adding the lines with Option keyword in the snippet below, it would look something like this;
+- In i3, enable Natural Scrolling and Tap to click by adding the lines with Option keyword in the snippet below, it would look something like this;
 
 ```
 Section "InputClass"
@@ -69,6 +69,7 @@ Section "InputClass"
 EndSection
 ```
 This should be the touchpand or mouse (as per the device you desire to have natural scroling with) section in `/usr/share/X11/xorg.conf.d/40-libinput.conf` file.
+- To install themes in i3, you could use a nice utility `lxappearance`, install the desired theme to system with the relevant instructions provided by the theme distributors and then launch lxappearance and select from the list of installed themes. lxappearance is lightweight and is available in arch official repository and should also be installable with apt, dnf, rpm etc.
 
 
 #### Cheers
