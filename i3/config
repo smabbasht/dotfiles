@@ -180,6 +180,11 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Abbas Bhai, Jarahay hain janab?' -B 'Ji Huzoor' 'i3-msg exit'"
 
+# Confiure gaps
+gaps inner 8
+gaps outer 8
+
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -188,10 +193,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -210,7 +215,7 @@ bindsym $mod+r mode "resize"
 # write dracula style theme color codes 
 # https://draculatheme.com/contribute
 #class                 border  backgr. text    indicator child_border
-client.focused          #6272a4 #44475a #f8f8f2 #bd93f9   #44475a
+client.focused_active   #ff7274 #44475a #f8f8f2 #bd93f9   #44475a
 client.focused_inactive #44475a #282a36 #f8f8f2 #44475a   #282a36
 client.unfocused        #44475a #282a36 #f8f8f2 #44475a   #282a36
 client.urgent           #282a36 #ff5555 #f8f8f2 #ff5555   #282a36
@@ -229,6 +234,11 @@ client.background       #282a36
 #
 # disable windows titlebars
 for_window [class="^.*"] border pixel 2
+
+## Screenshots
+bindsym Print exec --no-startup-id maim "~/Pictures/Screenshots/$(date)"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/Screenshots/$(date)"
+bindsym Shift+Print exec --no-startup-id maim --select "~/Pictures/Screenshots/$(date)"
 
 
 # add margin of 5 pixels between windows
@@ -261,4 +271,4 @@ for_window [class="^.*"] border pixel 2
 exec picom
 # run launch.sh
 exec_always ~/.config/polybar/launch.sh &
-exec_always feh --bg-fill ~/Downloads/Backgrounds/sea_blue.jpg
+# exec_always feh --bg-fill ~/Downloads/Backgrounds/sea_blue.jpg
