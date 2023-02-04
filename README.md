@@ -9,7 +9,7 @@ I run Vanilla Arch Linux with:
 
 *   i3 - the tiling window manager
 *   sddm - the display manager (login manager)
-*   Nvim - the best code editor
+*   Nvim - the best code and text editor out there
 *   Fish - the shell
 *   Kitty - the terminal emulator 
 *   Tmux - the terminal multiplexer
