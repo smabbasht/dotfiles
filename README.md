@@ -9,19 +9,25 @@ I run Vanilla Arch Linux with:
 
 *   i3 - the tiling window manager
 *   sddm - the display manager (login manager)
-*   Nvim - the best code and text editor out there
-*   Fish - the shell
-*   Kitty - the terminal emulator 
-*   Tmux - the terminal multiplexer
-*   Starship - the shell prompt
+*   neovim - the best code and text editor out there
+*   fish - the shell
+*   kitty - the terminal emulator 
+*   tmux - the terminal multiplexer
+*   starship - the shell prompt
 
 > All config files and folders are for Linux and I haven't tested them for windows, macOS or other proprietary operating
 systems so please edit the OS specific sections if you desire to use these on them.
 
 ### Considerations
+
+#### Tmux
+
 - .tmux.conf should be in your home folder, the path should be this (~/.tmux.conf), I know you can force source other 
 locations but that appeared to be inconsistent to me and I have to do it repeatedly, therefore it's good to put it there, I have 
 made a hard link of the two files so both the locations essentially point to the same file.
+
+#### Neovim
+
 - Neovim version must be atleast 0.7 so the the version 'apt' ships on Ubuntu may not be able to run the configurations. 
 On Ubuntu or other Debian based distros you could alternatively install Neovim through ppa with these commands <br> 
 ```
@@ -55,6 +61,9 @@ setup the environment for your next language if you wish to.
 ### Other Configurations
 
 Here I have listed other productivity configurations aside from the .config folder <br>
+
+#### i3
+
 - In i3, enable Natural Scrolling and Tap to click by adding the lines with Option keyword in the snippet below, it would look something like this;
 
 ```

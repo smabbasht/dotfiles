@@ -82,9 +82,9 @@ require('packer').startup(function(use)
   -- vim.cmd [[TransparentEnable]]
 
   -- Colorscheme
-  vim.cmd [[colorscheme tokyodark]]
-  vim.g.tokyodark_enable_italic = true
-  vim.g.tokyodark_enable_bold = true
+  -- vim.cmd [[colorscheme tokyodark]]
+  -- vim.g.tokyodark_enable_italic = true
+  -- vim.g.tokyodark_enable_bold = true
   -- vim.o.termguicolors = true
   -- vim.g.tokyodark_transparent_background = true
   -- vim.g.tokyodark_sidebars = { 'qf', 'vista_kind', 'terminal', 'packer' }
@@ -202,7 +202,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 require('lualine').setup {
   options = {
     icons_enabled = false,
-    theme = 'tokyodark',
     theme = 'tokyodark',
     component_separators = '|',
     section_separators = '',
@@ -522,6 +521,9 @@ cmp.setup {
 }
 
 
+vim.cmd [[colorscheme tokyodark]]
+vim.g.tokyodark_enable_italic = true
+vim.g.tokyodark_enable_bold = true
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
