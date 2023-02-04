@@ -77,6 +77,7 @@ require('packer').startup(function(use)
   vim.opt.incsearch = true -- search as you type
   vim.opt.hlsearch = true -- highlight search results
   vim.cmd [[set cursorline]]
+  vim.cmd [[set noswapfile]]
   vim.cmd [[set relativenumber]]
   vim.cmd [[set scrolloff=5]]
   -- vim.cmd [[TransparentEnable]]
