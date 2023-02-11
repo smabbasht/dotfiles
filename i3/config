@@ -79,7 +79,7 @@ bindsym $mod+x exec thunar
 bindsym $mod+m exec mailspring
 
 # open simplenotes
-bindsym $mod+n exec simplenote
+# bindsym $mod+n exec simplenote
 
 # kill focused window
 bindsym $mod+q kill
