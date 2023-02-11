@@ -140,9 +140,9 @@ rm -rvf Hack.zip
 > please dit the `config/i3` accordingly to avoid any errors.
 
 ### File Structure
- <br>
-.config/ <br>
- <br>
+
+.config <br>
+
 ├── i3 <br>
 │   └── config <br>
 ├── nvim <br>
@@ -171,16 +171,9 @@ rm -rvf Hack.zip
 │   ├── fish_variables <br>
 │   └── functions <br>
 │       ├── amake.fish <br>
-│       ├── aur.fish <br>
 │       ├── battery.fish <br>
-│       ├── cat.fish <br>
-│       ├── cm.fish <br>
 │       ├── con.fish <br>
-│       ├── Data.fish <br>
 │       ├── e.fish <br>
-│       ├── emulator.fish <br>
-│       ├── fish_prompt.fish -> /home/smabbasht/.local/share/omf/themes/dangerous/fish_prompt.fish <br>
-│       ├── gitaddcon.fish <br>
 │       ├── gtop.fish <br>
 │       ├── Q.fish <br>
 │       ├── qp.fish <br>
@@ -194,5 +187,7 @@ rm -rvf Hack.zip
 └── latex <br>
     └── template.tex <br>
  <br>
+
+ > Note: some fish functions aren't included due to irrelevance
 
 #### Cheers
