@@ -1,5 +1,7 @@
 ## smabbasht DotFiles
 
+
+
 This is a repository I maintain for my personal use, in order to keep track of my dotfiles. It is super useful when I
 have to setup my tools on a new machine or in case I mess around with my OS (I use Arch btw! XD) and things get serious. <br>
 I have curated a neat UI with natural keybindings and aliases for my daily workflow tools that are listed below <br>
@@ -41,7 +43,7 @@ I run Vanilla Arch Linux with:
     sudo apt-get install neovim
 
 *   For the Github copilot to run on neovim, it requires node version to be below 18 and above 16, I use it with v17.9.0 and it works
-    fine, you can downgrade or upgrade your node version by running the commands below, nodejs and npm is required, which can
+    like a charm, you can downgrade or upgrade your node version by running the commands below, nodejs and npm is required, which can
     be installed with pacman, dnf, apt etc. based on your OS and distro.
 
 <!---->
@@ -63,13 +65,28 @@ you should replace pacman with your package manager eg. apt, dnf, rpm etc.
     your desired package and press I to install, X to uninstall and U to update, press Esc to get to default Mason screen, you can now go
     setup the environment for your next language if you wish to.
 
+#### SDDM 
+
+*   SDDM has a few config file locations you can edit any of them to setup theme and do other customizations; typical locations are `/usr/lib/sddm/sddm.conf.d/default.conf`, `/etc/sddm.conf.d`.
+*   SDDM themes live here: `/usr/share/sddm/themes/`, If you wish to use any theme you can either download it from `AUR` or use `yay` to install it if you're on arch 
+or you could do it manually as described [here](https://store.kde.org/p/1312658) 
+*   Themes can be modified by editing `/usr/share/sddm/themes/theme-name/theme.conf`, 
+*   I use `sugar-dark` as my sddm theme. `sugar-candy` is also a good option. 
+*   Common modifications could be 
+        - Changing the background which could be done by editing `theme.conf`
+        - Disabling *1s* peek for password letters while entering
+          for this, you need to set `config.ForceHideCompletePassword == "true"` in `Components/Input.qml`
+        - Forcing the first letter of username to be lowercase as usernames aren't meant be Capitalized, 
+          for this, you need to comment out `font.capitalization: Font.Capitalize` in `Components/Input.qml`
+
+
 ### Other Configurations
 
-Here I have listed other productivity configurations aside from the .config folder <br>
+Here I have listed other productivity configurations aside from the `.config` folder <br>
 
 #### i3
 
-*   In i3, enable Natural Scrolling and Tap to click by adding the lines with Option keyword in the snippet below, it would look something like this;
+*   In i3, enable *Natural Scrolling* and *Tap to click* by adding the lines with Option keyword in the snippet below, it would look something like this;
 
 <!---->
 
@@ -92,52 +109,55 @@ This should be the touchpand or mouse (as per the device you desire to have natu
 #### Arch Linux
 
 For Arch Based Distributions, the attached command will install all the dependencies
-```
-sudo pacman -S neovim tmux kitty fish sddm starship rofi polybar i3 \
-        scrot feh picom noto-fonts-emoji --noconfirm
-```
-There are some key bindings in i3 configuration file such as for brave-browser, thunar, mailspring etc. If you don't wish to use them then comment corresponding lines 
-from `line 68` to `line 83` in `i3/config` file so that i3 launches with no error. same goes if you are planning not to use kitty or rofi etc.
 
-If you wish to use these nice opensource software, then install them through pacman and yay using the command added below
-```
-sudo pacman -S yay thunar 
-yay -S brave mailspring whatsapp-for-linux
-```
+    sudo pacman -S neovim tmux kitty fish sddm starship rofi polybar i3 \
+            scrot feh picom noto-fonts-emoji --noconfirm
+
+There are some key bindings in i3 configuration file such as for `brave-browser`, `thunar`, `mailspring` etc. If you don't wish to use them then comment corresponding lines
+from `line 68` to `line 83` in `i3/config` file so that i3 launches with no error. same goes if you are planning not to use `kitty` or `rofi` etc. 
+> Note that if you don't comment the lines where any of the software that you don't have on the system is referenced, i3 will not launch properly and show error.
+
+If you wish to use these nice opensource software, then install them through `pacman` and `yay` using the command added below
+
+    sudo pacman -S yay thunar 
+    yay -S brave mailspring whatsapp-for-linux
 
 ### Packages Used
-- i3
-- neovim
-- sddm
-- fish
-- kitty
-- tmux
-- starship
-- rofi
-- polybar
-- scrot
-- feh
-- picom
-- Any Nerd Font, I use `Hack Nerd Font` which is pretty nice, 
-> You can install any nerd font through their official [distibutor website](https://www.nerdfonts.com/) and unzip the file in `~/.local/share/fonts/`
-If you wish to use `Hack Nerd Font` then just do this:
-```
-wget "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Hack.zip"
-mkdir -p ~/.local/share/fonts/
-mv ./Hack.zip ~/.local/share/fonts/Hack.zip
-cd ~/.local/share/fonts
-unzip Hack.zip
-rm -rvf Hack.zip
-```
-[Optional Dependencies] 
-- yay
-- thunar
-- brave
-- mailspring
-- whatsapp-for-linux
 
-> If you wish not to use software listed in optional dependencies, 
-> please dit the `config/i3` accordingly to avoid any errors.
+*   i3
+*   neovim
+*   sddm
+*   fish
+*   kitty
+*   tmux
+*   starship
+*   rofi
+*   polybar
+*   scrot
+*   feh
+*   picom
+*   Any Nerd Font, I use `Hack Nerd Font` which is pretty nice,
+
+> You can install any *nerd font* through their official [distributor website](https://www.nerdfonts.com/) and unzip the file in `~/.local/share/fonts/`
+> If you wish to use `Hack Nerd Font` then just do this:
+
+    wget "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Hack.zip"
+    mkdir -p ~/.local/share/fonts/
+    mv ./Hack.zip ~/.local/share/fonts/Hack.zip
+    cd ~/.local/share/fonts
+    unzip Hack.zip
+    rm -rvf Hack.zip
+
+#### [Optional Packages]
+
+*   yay
+*   thunar
+*   brave
+*   mailspring
+*   whatsapp-for-linux
+
+> If you wish not to use software listed in optional packages,
+> please edit the `config/i3` accordingly to avoid any errors (you should then comment the corresponding lines as described above).
 
 ### File Structure
 
@@ -148,7 +168,7 @@ rm -rvf Hack.zip
 ├── nvim <br>
 │   ├── init.lua <br>
 │   └── plugin <br>
-│       └── packer_compiled.lua <br>
+│       └── packer\_compiled.lua <br>
 ├── polybar <br>
 │   ├── config.ini <br>
 │   └── launch.sh <br>
@@ -168,7 +188,7 @@ rm -rvf Hack.zip
 │   │   └── dracula.fish <br>
 │   ├── config.fish <br>
 │   ├── config.fish.bak <br>
-│   ├── fish_variables <br>
+│   ├── fish\_variables <br>
 │   └── functions <br>
 │       ├── amake.fish <br>
 │       ├── battery.fish <br>
@@ -185,9 +205,8 @@ rm -rvf Hack.zip
 ├── clang-format <br>
 │   └── .clang-format <br>
 └── latex <br>
-    └── template.tex <br>
- <br>
+   └── template.tex <br> <br>
 
- > Note: some fish functions aren't included due to irrelevance
+> Note: some fish functions aren't included due to irrelevance
 
 #### Cheers
