@@ -72,11 +72,11 @@ you should replace pacman with your package manager eg. apt, dnf, rpm etc.
 or you could do it manually as described [here](https://store.kde.org/p/1312658) 
 *   Themes can be modified by editing `/usr/share/sddm/themes/theme-name/theme.conf`, 
 *   I use `sugar-dark` as my sddm theme. `sugar-candy` is also a good option. 
-*   Common modifications could be:
-        1. Changing the background which could be done by editing `theme.conf`
-        2. Disabling *1s* peek for password letters while entering
+*   Common modifications to theme could be: <br>
+        * Changing the background which could be done by editing `theme.conf`
+        * Disabling *1s* peek for password letters while entering
           for this, you need to set `config.ForceHideCompletePassword == "true"` in `Components/Input.qml`
-        1. Forcing the first letter of username to be lowercase as usernames aren't meant be Capitalized, 
+        * Forcing the first letter of username to be lowercase as usernames aren't meant be Capitalized, 
           for this, you need to comment out `font.capitalization: Font.Capitalize` in `Components/Input.qml`
 
 
