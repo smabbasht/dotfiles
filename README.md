@@ -1,6 +1,12 @@
 ## smabbasht DotFiles
 
 
+### Screenshots
+
+| | |
+|:-------------------------:|:-------------------------:|
+|<img width="1604" alt="desktop" src="./images/1_desktop.png"> |  <img width="1604" alt="b_top, neofetch, tmux" src="./images/2_btop.png">|
+|<img width="1604" alt="display-manager" src="./images/3_dm.png">  |  <img width="1604" alt="rofi launcher" src="./images/4_rofi.png">|
 
 This is a repository I maintain for my personal use, in order to keep track of my dotfiles. It is super useful when I
 have to setup my tools on a new machine or in case I mess around with my OS (I use Arch btw! XD) and things get serious. <br>
