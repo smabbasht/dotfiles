@@ -140,59 +140,59 @@ rm -rvf Hack.zip
 > please dit the `config/i3` accordingly to avoid any errors.
 
 ### File Structure
-
-.config/
-
-├── i3
-│   └── config
-├── nvim
-│   ├── init.lua
-│   └── plugin
-│       └── packer_compiled.lua
-├── polybar
-│   ├── config.ini
-│   └── launch.sh
-├── README.md
-├── rofi
-│   ├── config.rasi
-│   └── themes
-│       └── dt-center.rasi
-├── tmux
-├── .tmux.conf
-├── starship.toml
-├── kitty
-│   └── kitty.conf
-├── fish
-│   ├── completions
-│   ├── conf.d
-│   │   └── dracula.fish
-│   ├── config.fish
-│   ├── config.fish.bak
-│   ├── fish_variables
-│   └── functions
-│       ├── amake.fish
-│       ├── aur.fish
-│       ├── battery.fish
-│       ├── cat.fish
-│       ├── cm.fish
-│       ├── con.fish
-│       ├── Data.fish
-│       ├── e.fish
-│       ├── emulator.fish
-│       ├── fish_prompt.fish -> /home/smabbasht/.local/share/omf/themes/dangerous/fish_prompt.fish
-│       ├── gitaddcon.fish
-│       ├── gtop.fish
-│       ├── Q.fish
-│       ├── qp.fish
-│       ├── qr.fish
-│       ├── qs.fish
-│       ├── R.fish
-│       ├── S.fish
-│       └── tmls.fish
-├── clang-format
-│   └── .clang-format
-└── latex
-    └── template.tex
-
+ <br>
+.config/ <br>
+ <br>
+├── i3 <br>
+│   └── config <br>
+├── nvim <br>
+│   ├── init.lua <br>
+│   └── plugin <br>
+│       └── packer_compiled.lua <br>
+├── polybar <br>
+│   ├── config.ini <br>
+│   └── launch.sh <br>
+├── README.md <br>
+├── rofi <br>
+│   ├── config.rasi <br>
+│   └── themes <br>
+│       └── dt-center.rasi <br>
+├── tmux <br>
+├── .tmux.conf <br>
+├── starship.toml <br>
+├── kitty <br>
+│   └── kitty.conf <br>
+├── fish <br>
+│   ├── completions <br>
+│   ├── conf.d <br>
+│   │   └── dracula.fish <br>
+│   ├── config.fish <br>
+│   ├── config.fish.bak <br>
+│   ├── fish_variables <br>
+│   └── functions <br>
+│       ├── amake.fish <br>
+│       ├── aur.fish <br>
+│       ├── battery.fish <br>
+│       ├── cat.fish <br>
+│       ├── cm.fish <br>
+│       ├── con.fish <br>
+│       ├── Data.fish <br>
+│       ├── e.fish <br>
+│       ├── emulator.fish <br>
+│       ├── fish_prompt.fish -> /home/smabbasht/.local/share/omf/themes/dangerous/fish_prompt.fish <br>
+│       ├── gitaddcon.fish <br>
+│       ├── gtop.fish <br>
+│       ├── Q.fish <br>
+│       ├── qp.fish <br>
+│       ├── qr.fish <br>
+│       ├── qs.fish <br>
+│       ├── R.fish <br>
+│       ├── S.fish <br>
+│       └── tmls.fish <br>
+├── clang-format <br>
+│   └── .clang-format <br>
+└── latex <br>
+    └── template.tex <br>
+ <br>
 
 #### Cheers
