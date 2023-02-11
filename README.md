@@ -141,5 +141,58 @@ rm -rvf Hack.zip
 
 ### File Structure
 
+.config/
+
+├── i3
+│   └── config
+├── nvim
+│   ├── init.lua
+│   └── plugin
+│       └── packer_compiled.lua
+├── polybar
+│   ├── config.ini
+│   └── launch.sh
+├── README.md
+├── rofi
+│   ├── config.rasi
+│   └── themes
+│       └── dt-center.rasi
+├── tmux
+├── .tmux.conf
+├── starship.toml
+├── kitty
+│   └── kitty.conf
+├── fish
+│   ├── completions
+│   ├── conf.d
+│   │   └── dracula.fish
+│   ├── config.fish
+│   ├── config.fish.bak
+│   ├── fish_variables
+│   └── functions
+│       ├── amake.fish
+│       ├── aur.fish
+│       ├── battery.fish
+│       ├── cat.fish
+│       ├── cm.fish
+│       ├── con.fish
+│       ├── Data.fish
+│       ├── e.fish
+│       ├── emulator.fish
+│       ├── fish_prompt.fish -> /home/smabbasht/.local/share/omf/themes/dangerous/fish_prompt.fish
+│       ├── gitaddcon.fish
+│       ├── gtop.fish
+│       ├── Q.fish
+│       ├── qp.fish
+│       ├── qr.fish
+│       ├── qs.fish
+│       ├── R.fish
+│       ├── S.fish
+│       └── tmls.fish
+├── clang-format
+│   └── .clang-format
+└── latex
+    └── template.tex
+
 
 #### Cheers
