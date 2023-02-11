@@ -91,7 +91,7 @@ This should be the touchpand or mouse (as per the device you desire to have natu
 
 #### Arch Linux
 
-For Arch Based Distributions, this command will install all the dependencies
+For Arch Based Distributions, the attached command will install all the dependencies
 ```
 sudo pacman -S neovim tmux kitty fish sddm starship rofi polybar i3 \
         scrot feh picom noto-fonts-emoji --noconfirm
@@ -99,7 +99,7 @@ sudo pacman -S neovim tmux kitty fish sddm starship rofi polybar i3 \
 There are some key bindings in i3 configuration file such as for brave-browser, thunar, mailspring etc. If you don't wish to use them then comment corresponding lines 
 from `line 68` to `line 83` in `i3/config` file so that i3 launches with no error. same goes if you are planning not to use kitty or rofi etc.
 
-If you wish to use these nice opensource software, then install them through Pacman using the command below
+If you wish to use these nice opensource software, then install them through pacman and yay using the command added below
 ```
 sudo pacman -S yay thunar 
 yay -S brave mailspring whatsapp-for-linux
