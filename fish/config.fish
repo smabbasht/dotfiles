@@ -1,7 +1,5 @@
 set -U fish_greeting ""
 
-set randNum (random 2 2 212)
-#echo $randNum
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
@@ -11,6 +9,9 @@ if status --is-login
 end
 
 export CHROME_EXECUTABLE=pwd
+
+set randNum (random 2 2 212)
+#echo $randNum
 
 function quote
   # Set the file path to the quotes file

@@ -85,6 +85,13 @@ or you could do it manually as described [here](https://store.kde.org/p/1312658)
     * Forcing the first letter of username to be lowercase as usernames aren't meant be Capitalized, 
       for this, you need to comment out `font.capitalization: Font.Capitalize` in `Components/Input.qml`
 
+#### Fish
+
+* `fish/config.fish` uses `~/shell_quotes_prompt/quotes.txt`, that you may have to create yourself if you wish to use the tweak, Basically it 
+displays a random quotation in the file `quotes.txt` and displays everytime you launch your shell which I found prolific. If you wish to ignore
+it, remove `line 10` to `line 33`.
+* It also uses [zoxide](https://github.com/ajeetdsouza/zoxide) which is a nice replacement to cd, if you wish not to use that remove the corresponding two lines.
+* It also uses [fish_vi_key_bindings](https://github.com/fish-shell/fish-shell/blob/master/share/functions/fish_vi_key_bindings.fish) which is gives vi-key-bindings in fish shell, if you wish not to use that remove the corresponding two ines.
 
 ### Other Configurations
 
@@ -165,54 +172,65 @@ If you wish to use these nice opensource software, then install them through `pa
 > If you wish not to use software listed in optional packages,
 > please edit the `config/i3` accordingly to avoid any errors (you should then comment the corresponding lines as described above).
 
-### File Structure
+<!-- ### File Structure -->
+<!---->
+<!-- .config <br> -->
+<!---->
+<!-- ├── i3 <br> -->
+<!-- │   └── config <br> -->
+<!-- ├── nvim <br> -->
+<!-- │   ├── init.lua <br> -->
+<!-- │   └── plugin <br> -->
+<!-- │       └── packer\_compiled.lua <br> -->
+<!-- ├── polybar <br> -->
+<!-- │   ├── config.ini <br> -->
+<!-- │   └── launch.sh <br> -->
+<!-- ├── README.md <br> -->
+<!-- ├── rofi <br> -->
+<!-- │   ├── config.rasi <br> -->
+<!-- │   └── themes <br> -->
+<!-- │       └── dt-center.rasi <br> -->
+<!-- ├── tmux <br> -->
+<!-- ├── .tmux.conf <br> -->
+<!-- ├── starship.toml <br> -->
+<!-- ├── kitty <br> -->
+<!-- │   └── kitty.conf <br> -->
+<!-- ├── fish <br> -->
+<!-- │   ├── completions <br> -->
+<!-- │   ├── conf.d <br> -->
+<!-- │   │   └── dracula.fish <br> -->
+<!-- │   ├── config.fish <br> -->
+<!-- │   ├── config.fish.bak <br> -->
+<!-- │   ├── fish\_variables <br> -->
+<!-- │   └── functions <br> -->
+<!-- │       ├── amake.fish <br> -->
+<!-- │       ├── battery.fish <br> -->
+<!-- │       ├── con.fish <br> -->
+<!-- │       ├── e.fish <br> -->
+<!-- │       ├── gtop.fish <br> -->
+<!-- │       ├── Q.fish <br> -->
+<!-- │       ├── qp.fish <br> -->
+<!-- │       ├── qr.fish <br> -->
+<!-- │       ├── qs.fish <br> -->
+<!-- │       ├── R.fish <br> -->
+<!-- │       ├── S.fish <br> -->
+<!-- │       └── tmls.fish <br> -->
+<!-- ├── clang-format <br> -->
+<!-- │   └── .clang-format <br> -->
+<!-- └── latex <br> -->
+<!--    └── template.tex <br> <br> -->
+<!---->
+<!-- > Note: some fish functions aren't included due to irrelevance -->
 
-.config <br>
+### Credits
 
-├── i3 <br>
-│   └── config <br>
-├── nvim <br>
-│   ├── init.lua <br>
-│   └── plugin <br>
-│       └── packer\_compiled.lua <br>
-├── polybar <br>
-│   ├── config.ini <br>
-│   └── launch.sh <br>
-├── README.md <br>
-├── rofi <br>
-│   ├── config.rasi <br>
-│   └── themes <br>
-│       └── dt-center.rasi <br>
-├── tmux <br>
-├── .tmux.conf <br>
-├── starship.toml <br>
-├── kitty <br>
-│   └── kitty.conf <br>
-├── fish <br>
-│   ├── completions <br>
-│   ├── conf.d <br>
-│   │   └── dracula.fish <br>
-│   ├── config.fish <br>
-│   ├── config.fish.bak <br>
-│   ├── fish\_variables <br>
-│   └── functions <br>
-│       ├── amake.fish <br>
-│       ├── battery.fish <br>
-│       ├── con.fish <br>
-│       ├── e.fish <br>
-│       ├── gtop.fish <br>
-│       ├── Q.fish <br>
-│       ├── qp.fish <br>
-│       ├── qr.fish <br>
-│       ├── qs.fish <br>
-│       ├── R.fish <br>
-│       ├── S.fish <br>
-│       └── tmls.fish <br>
-├── clang-format <br>
-│   └── .clang-format <br>
-└── latex <br>
-   └── template.tex <br> <br>
+Some parts of my dotfiles are inspired by opensource content creators and contributors:
 
-> Note: some fish functions aren't included due to irrelevance
+* `nvim/init.lua` follows the base template of [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) by [TJ DeVries](https://www.youtube.com/@teej_dv)
+* A few keymaps in `nvim/init.lua` are inspired by [ThePrimeagen](https://www.youtube.com/c/theprimeagen)
+* Credits for the theming of rofi belongs to [DistroTube](https://www.youtube.com/c/distrotube) published on his [GitLab](https://gitlab.com/dwt1/dotfiles/-/tree/master/.config/rofi)
+* clang-format/ and latex/ are contributed by [Qazalbash](www.github.com/Qazalbash)
+* i3 customization is inspired by [The Linux Cast](https://www.youtube.com/c/TheLinuxCast?app=desktop) videos.
+* Plus some nice guys on StackOverflow, Archwiki, Reddit, GitHub, Youtube etc who I may have forgotten to include.
 
 #### Cheers
