@@ -118,11 +118,13 @@ yay -S brave mailspring whatsapp-for-linux
 - scrot
 - feh
 - picom
-- Any Nerd Font, I use `Hack Nerd Font` which is pretty nice, you can install any nerd font through their official [distibutor website](https://www.nerdfonts.com/)
-
+- Any Nerd Font, I use `Hack Nerd Font` which is pretty nice, 
+> You can install any nerd font through their official [distibutor website](https://www.nerdfonts.com/) and unzip the file in `~/.local/share/fonts/`
+If you wish to use `Hack Nerd Font` then just do this:
 ```
-wget "https://objects.githubusercontent.com/github-production-release-asset-2e65be/27574418/7b9eadbd-91c4-4495-afbf-28b0d9c0e3cb?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230211%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230211T120230Z&X-Amz-Expires=300&X-Amz-Signature=57e0271533723fed6c27508bd5e1b2061a18c61b7d7ea3d449d4d391e6894a42&X-Amz-SignedHeaders=host&actor_id=79911677&key_id=0&repo_id=27574418&response-content-disposition=attachment%3B%20filename%3DHack.zip&response-content-type=application%2Foctet-stream"
-mv ./*Foctet-stream ~/.local/share/fonts/Hack.zip
+wget "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Hack.zip"
+mkdir -p ~/.local/share/fonts/
+mv ./Hack.zip ~/.local/share/fonts/Hack.zip
 cd ~/.local/share/fonts
 unzip Hack.zip
 rm -rvf Hack.zip
