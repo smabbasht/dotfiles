@@ -28,6 +28,31 @@ I run Vanilla Arch Linux with:
 > All config files and folders are for Linux and I haven't tested them for windows, macOS or other proprietary operating
 > systems so please edit the OS specific sections if you desire to use these on them.
 
+### Installation Scripts
+
+#### Arch Linux
+
+For Arch Based Distributions, the attached command will install all the dependencies
+
+    sudo pacman -S neovim tmux kitty fish sddm starship rofi polybar i3 \
+            scrot feh picom noto-fonts-emoji notify --noconfirm
+
+There are some key bindings in i3 configuration file such as for `brave-browser`, `thunar`, `mailspring` etc. If you don't wish to use them then comment corresponding lines
+from `line 68` to `line 83` in `i3/config` file so that i3 launches with no error. same goes if you are planning not to use `kitty` or `rofi` etc. 
+> Note that if you don't comment the lines where any of the software that you don't have on the system is referenced, i3 will not launch properly and show error.
+
+If you wish to use these nice opensource software, then install them through `pacman` and `yay` using the command added below
+
+    sudo pacman -S yay thunar 
+    yay -S brave mailspring whatsapp-for-linux
+
+This repository can be cloned into your `~/.config/` folder through this command:
+```
+git clone https://github.com/smabbasht/dotfiles.git ~/.config
+mv ~/.config/dotfiles/* ~/.config/
+mv ~/.config/dotfiles/.* ~/.config/
+```
+
 ### Considerations
 
 #### Tmux
@@ -113,27 +138,9 @@ Here I have listed other productivity configurations aside from the `.config` fo
             Option "ScrollMethod" "twofinger"
     EndSection
 
-This should be the touchpand or mouse (as per the device you desire to have natural scroling with) section in `/usr/share/X11/xorg.conf.d/40-libinput.conf` file.
+This should be the touchpad or mouse (as per the device you desire to have natural scroling with) section in `/usr/share/X11/xorg.conf.d/40-libinput.conf` file.
 
 *   To install themes in i3, you could use a nice utility `lxappearance`, install the desired theme to system with the relevant instructions provided by the theme distributors and then launch lxappearance and select from the list of installed themes. lxappearance is lightweight and is available in arch official repository and should also be installable with apt, dnf, rpm etc.
-
-### Installation Scripts
-
-#### Arch Linux
-
-For Arch Based Distributions, the attached command will install all the dependencies
-
-    sudo pacman -S neovim tmux kitty fish sddm starship rofi polybar i3 \
-            scrot feh picom noto-fonts-emoji --noconfirm
-
-There are some key bindings in i3 configuration file such as for `brave-browser`, `thunar`, `mailspring` etc. If you don't wish to use them then comment corresponding lines
-from `line 68` to `line 83` in `i3/config` file so that i3 launches with no error. same goes if you are planning not to use `kitty` or `rofi` etc. 
-> Note that if you don't comment the lines where any of the software that you don't have on the system is referenced, i3 will not launch properly and show error.
-
-If you wish to use these nice opensource software, then install them through `pacman` and `yay` using the command added below
-
-    sudo pacman -S yay thunar 
-    yay -S brave mailspring whatsapp-for-linux
 
 ### Packages Used
 
@@ -149,6 +156,7 @@ If you wish to use these nice opensource software, then install them through `pa
 *   scrot
 *   feh
 *   picom
+*   notify
 *   Any Nerd Font, I use `Hack Nerd Font` which is pretty nice,
 
 > You can install any *nerd font* through their official [distributor website](https://www.nerdfonts.com/) and unzip the file in `~/.local/share/fonts/`
@@ -228,9 +236,9 @@ Some parts of my dotfiles are inspired by opensource content creators and contri
 
 * `nvim/init.lua` follows the base template of [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) by [TJ DeVries](https://www.youtube.com/@teej_dv)
 * A few keymaps in `nvim/init.lua` are inspired by [ThePrimeagen](https://www.youtube.com/c/theprimeagen)
-* Credits for the theming of rofi belongs to [DistroTube](https://www.youtube.com/c/distrotube) published on his [GitLab](https://gitlab.com/dwt1/dotfiles/-/tree/master/.config/rofi)
-* clang-format/ and latex/ are contributed by [Qazalbash](www.github.com/Qazalbash)
-* i3 customization is inspired by [The Linux Cast](https://www.youtube.com/c/TheLinuxCast?app=desktop) videos.
+* Credits for the theming of `rofi` belongs to [DistroTube](https://www.youtube.com/c/distrotube) published on his [GitLab](https://gitlab.com/dwt1/dotfiles/-/tree/master/.config/rofi)
+* `clang-format/` and `latex/` are contributed by [Qazalbash](www.github.com/Qazalbash)
+* `i3` customization is inspired by [The Linux Cast](https://www.youtube.com/c/TheLinuxCast?app=desktop) videos.
 * Plus some nice guys on StackOverflow, Archwiki, Reddit, GitHub, Youtube etc who I may have forgotten to include.
 
 #### Cheers
