@@ -1,3 +1,4 @@
-function emulator --wraps=/home/abbas/Android/Sdk/emulator/emulator --description 'alias emulator=/home/abbas/Android/Sdk/emulator/emulator'
-  /home/abbas/Android/Sdk/emulator/emulator $argv; 
+function emulator --wraps='~/Android/Sdk/emulator/emulator' --wraps='~/Android/Sdk/emulator/emulator -gpu host -avd Nexus' --description 'alias emulator ~/Android/Sdk/emulator/emulator -gpu host -avd Nexus'
+  ~/Android/Sdk/emulator/emulator -gpu host -avd Nexus $argv
+        
 end

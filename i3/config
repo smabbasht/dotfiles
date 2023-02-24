@@ -25,7 +25,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 
 # low batteyr notifier
-exec --no-startup-id i3-battery-popup -n -L 20 -l 10 -t 1m -m "Abbas, Can you please charge your laptop"
+exec --no-startup-id i3-battery-popup -n -L 20 -l 10 -t 1m -m "Can you please charge your laptop"
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -63,20 +63,23 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec kitty
+# bindsym $mod+Return exec kitty
 # bindsym $mod+Return exec i3-sensible-terminal
 
 # open brave browser 
-bindsym $mod+b exec brave
+# bindsym $mod+b exec brave
 
 # open whatsapp 
-bindsym $mod+Shift+w exec whatsapp-for-linux
+# bindsym $mod+Shift+w exec whatsapp-for-linux
 
 # open nautilus
-bindsym $mod+x exec thunar
+# bindsym $mod+x exec thunar
 
 # open mailspring
-bindsym $mod+m exec mailspring
+# bindsym $mod+m exec mailspring
+
+# 
+# bindsym $mod+y exec '~/Android/Sdk/emulator/emulator -avd Nexus -gpu host' 
 
 # open simplenotes
 # bindsym $mod+n exec simplenote
@@ -85,7 +88,7 @@ bindsym $mod+m exec mailspring
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id "rofi -show drun"
+bindsym $mod+d exec --no-startup-id "rofi -i -show drun -modi drun -show-icons"
 # search for files too
 bindsym $mod+Shift+d exec --no-startup-id "rofi -show run"
 
@@ -193,6 +196,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Abbas Bhai, Jarahay hain jan
 # Confiure gaps
 gaps inner 8
 gaps outer 8
+smart_gaps on
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -208,10 +212,10 @@ mode "resize" {
         bindsym l resize grow width 1 px or 1 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 1 px or 1 ppt
+        bindsym Right resize shrink width 1 px or 1 ppt
         bindsym Down resize grow height 1 px or 1 ppt
         bindsym Up resize shrink height 1 px or 1 ppt
-        bindsym Right resize grow width 1 px or 1 ppt
+        bindsym Left resize grow width 1 px or 1 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -221,65 +225,25 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# write dracula style theme color codes 
-# https://draculatheme.com/contribute
-#class                 border  backgr. text    indicator child_border
-client.focused_active   #ff7274 #44475a #f8f8f2 #bd93f9   #44475a
-client.focused_inactive #44475a #282a36 #f8f8f2 #44475a   #282a36
-client.unfocused        #44475a #282a36 #f8f8f2 #44475a   #282a36
-client.urgent           #282a36 #ff5555 #f8f8f2 #ff5555   #282a36
-client.placeholder      #282a36 #282a36 #f8f8f2 #282a36   #282a36
-
+# client.background       #282a36
+# make backgruond transparent
 client.background       #282a36
-#
-# #class                 border  backgr. text    indicator child_border
-# client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
-# client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-# client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-# client.urgent           #2f343a #900000 #ffffff #900000   #900000
-# client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-#
-# client.background       #ffffff
-#
+
+#class                 border  backgr. text    indicator child_border
+client.focused_active   #b4c5f9 #44475a #f8f8f2 #124232   #44475a
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
 # disable windows titlebars
 for_window [class="^.*"] border pixel 2
 
-## Screenshots
-# bindsym Print exec --no-startup-id maim "~/Pictures/Screenshots/$(date)"
-# bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "~/Pictures/Screenshots/$(date)"
-# bindsym Shift+Print exec --no-startup-id maim --select "~/Pictures/Screenshots/$(date)"
-# Multi-screen screenshots with scrot
 bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
 
 # OSX-like area selection screenshots
 bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
 
-# add margin of 5 pixels between windows
-# for_window [class="^.*"] border pixel 5
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-
-# # make the bar look amazingly beautiful
-# bar {
-#         # remove network information form the bar
-#         status_command i3status
-#         tray_output primary
-#         tray_padding 5
-#         position bottom
-#         font pango:Hack Nerd Font 10
-#         colors {
-#                 background #282a36
-#                 statusline #f8f8f2
-#                 separator #44475a
-#                 focused_workspace #f8f8f2 #44475a #f8f8f2 #bd93f9 #f8f8f2
-#                 active_workspace #f8f8f2 #44475a #f8f8f2 #bd93f9 #f8f8f2
-#                 inactive_workspace #f8f8f2 #282a36 #f8f8f2 #44475a #f8f8f2
-#                 urgent_workspace #f8f8f2 #ff5555 #f8f8f2 #ff5555 #f8f8f2
-#         }
-#         # edit content
-#         
-# }
 # gnome polickit authentivation
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 

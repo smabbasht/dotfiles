@@ -61,8 +61,14 @@ require('packer').startup(function(use)
   use 'windwp/nvim-autopairs'
   use 'tpope/vim-surround' 
   use 'lervag/vimtex' -- LaTeX support
-  use 'lervag/vimtex' -- LaTeX support
-  use 'olimorris/onedarkpro.nvim'
+  use 'SirVer/ultisnips'
+  -- use 'olimorris/onedarkpro.nvim'
+  -- require('coc').setup(
+  --   {
+  --     "coc-python",
+  --     "coc-clangd",
+  --   }
+  -- )
   -- use {
   --   'marioortizmanero/adoc-pdf-live.nvim',
   --   config = "require('adoc_pdf_live').setup()"
@@ -91,6 +97,10 @@ require('packer').startup(function(use)
   -- vim.g.tokyodark_sidebars = { 'qf', 'vista_kind', 'terminal', 'packer' }
 
  --------x plugins x-----------------------------------------------------------------------------------------------
+
+  -- Flutter
+  use {'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'}
+  require("flutter-tools").setup{} -- use defaults
 
   -- Git related plugins
   use 'tpope/vim-fugitive'
@@ -215,7 +225,8 @@ require('Comment').setup()
 -- Enable `lukas-reineke/indent-blankline.nvim`
 -- See `:help indent_blankline.txt`
 require('indent_blankline').setup {
-  char = '┊',
+  char = ' ',
+  -- char = '┊',
   show_trailing_blankline_indent = false,
 }
 
@@ -266,7 +277,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'help', 'vim' },
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'dart','help', 'vim' },
 
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
@@ -353,6 +364,10 @@ require('nvim-autopairs').setup()
 
 -- Switch Buffers
 
+
+-- map H to 'Hzz' and L to 'Lzz
+vim.keymap.set({'n', 'v'}, 'H', 'Hzz')
+vim.keymap.set({'n', 'v'}, 'L', 'Lzz')
 vim.keymap.set('n', '<leader><Right>', vim.cmd.bnext)
 vim.keymap.set('n', '<leader><Left>', vim.cmd.bprevious)
 
@@ -434,18 +449,54 @@ end
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
-  -- clangd = {},
+  clangd = {},
+  pyright = {
+    settings = {
+      python = {
+        analysis = {
+          typeCheckingMode = 'off',
+          autoSearchPaths = true,
+          useLibraryCodeForTypes = true,
+        },
+      },
+    },
+  },
+  prosemd_lsp = {},
+  remark_ls = {},
+  lua_ls = {},
+  -- dartls = {
+  --   settings = {
+  --     dart = {
+  --       sdkPath = '/usr/lib/dart',
+  --     },
+  --   },
+  -- },
+  --
+
+  -- dartls = {
+  --   settings = {
+  --     dart = {
+  --       sdkPath = '/usr/lib/dart',
+  --     },
+  --   },
+  -- },
+  -- ltex = {},
+  -- ltex-ls = {},
+  -- python_language_server = {},
+  -- prosemd_language_server = {},
+  -- remark_language_server = {},
+  -- lua_language_server = {},
   -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
   -- tsserver = {},
 
-  sumneko_lua = {
-    Lua = {
-      workspace = { checkThirdParty = false },
-      telemetry = { enable = false },
-    },
-  },
+  -- sumneko_lua = {
+  --   Lua = {
+  --     workspace = { checkThirdParty = false },
+  --     telemetry = { enable = false },
+  --   },
+  -- },
 }
 
 -- Setup neovim lua configuration
@@ -467,6 +518,7 @@ mason_lspconfig.setup {
 
 mason_lspconfig.setup_handlers {
   function(server_name)
+    -- print('LSP: ' .. server_name .. ' is ready')
     require('lspconfig')[server_name].setup {
       capabilities = capabilities,
       on_attach = on_attach,
@@ -505,7 +557,7 @@ cmp.setup {
         fallback()
       end
     end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
+    ['<S-Left>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
       elseif luasnip.jumpable(-1) then
