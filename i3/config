@@ -64,7 +64,7 @@ tiling_drag modifier titlebar
 
 # start a terminal
 # bindsym $mod+Return exec kitty
-# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec i3-sensible-terminal
 
 # open brave browser 
 # bindsym $mod+b exec brave
