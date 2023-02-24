@@ -237,8 +237,8 @@ Some parts of my dotfiles are inspired by opensource content creators and contri
 * `nvim/init.lua` follows the base template of [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) by [TJ DeVries](https://www.youtube.com/@teej_dv)
 * A few keymaps in `nvim/init.lua` are inspired by [ThePrimeagen](https://www.youtube.com/c/theprimeagen)
 * Credits for the theming of `rofi` belongs to [DistroTube](https://www.youtube.com/c/distrotube) published on his [GitLab](https://gitlab.com/dwt1/dotfiles/-/tree/master/.config/rofi)
-* `clang-format/` and `latex/` are contributed by [Qazalbash](www.github.com/Qazalbash)
+* `clang-format/` and `latex/` are contributed by @Qazalbash <!--- [Qazalbash](www.github.com/Qazalbash) -->
 * `i3` customization is inspired by [The Linux Cast](https://www.youtube.com/c/TheLinuxCast?app=desktop) videos.
-* Plus some nice guys on StackOverflow, Archwiki, Reddit, GitHub, Youtube etc who I may have forgotten to include.
+* Plus some nice guys on [StackOverflow](www.stackoverflow.com), [Archwiki](https://wiki.archlinux.org/), [Reddit](www.reddit.com), [GitHub](www.github.com), [Youtube](www.youtube.com) etc who I may have forgotten to include.
 
 #### Cheers
