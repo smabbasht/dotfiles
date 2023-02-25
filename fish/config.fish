@@ -8,14 +8,12 @@ if status --is-login
     set -gx PATH $PATH ~/linux/bin
 end
 
-export CHROME_EXECUTABLE=pwd
-
-set randNum (random 2 2 212)
+set randNum (random 1 1 129)
 #echo $randNum
 
 function quote
   # Set the file path to the quotes file
-  set quote_file $HOME/shell_quotes_prompt/quotes.txt
+  set quote_file $HOME/.config/quotes/quotes.txt
   # Retrieve a random quote for the file
   sed -n $(awk "END{ print $randNum }" $quote_file)p $quote_file
 end
