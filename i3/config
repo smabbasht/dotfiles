@@ -249,8 +249,15 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Compositor
 exec picom
+
 # run launch.sh
 exec_always ~/.config/polybar/launch.sh &
-exec feh --bg-fill --randomize ~/Downloads/Backgrounds/* &
+
+# get default wallpaper from the repository
+exec feh --bg-fill --randomize ../images/night-road-plants.jpg &
+
+# Uncomment the following line to get random wallpepers from the specified directory
+# exec feh --bg-fill --randomize ~/Downloads/Backgrounds/* &
+
 
 
