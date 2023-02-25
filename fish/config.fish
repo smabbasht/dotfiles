@@ -10,7 +10,7 @@ end
 
 export CHROME_EXECUTABLE=pwd
 
-set randNum (random 2 2 212)
+set randNum (random 1 1 129)
 #echo $randNum
 
 function quote
