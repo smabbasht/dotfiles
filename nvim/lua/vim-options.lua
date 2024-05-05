@@ -1,7 +1,6 @@
 vim.g.mapleader = " "
 vim.g.background = "light"
 
-vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 vim.wo.number = true
 
 -- vim.opt.guifont = "Hack Nerd Font"

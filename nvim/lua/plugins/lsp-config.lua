@@ -19,6 +19,13 @@ return {
     {
         "neovim/nvim-lspconfig",
         lazy = false,
+        opts = {
+            setup = {
+                rust_analyzer = function()
+                    return true
+                end,
+            },
+        },
         config = function()
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
 

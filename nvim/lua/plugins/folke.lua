@@ -9,14 +9,24 @@ return {
         end,
         opts = {},
     },
+    -- TODO: 
     {
-        "folke/todo-comments.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
+        'folke/todo-comments.nvim',
+        event = 'VimEnter',
+        dependencies = { 'nvim-lua/plenary.nvim' },
         config = function()
+            require("todo-comments").setup()
             vim.keymap.set("n", "<leader>td", ":TodoTelescope<CR>", { silent = true })
         end,
-        opts = {},
+        opts = { signs = false }
     },
+
+    -- {
+    --     "folke/todo-comments.nvim",
+    --     dependencies = { "nvim-lua/plenary.nvim" },
+    --     opts = {},
+    -- },
+
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
