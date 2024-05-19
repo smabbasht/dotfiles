@@ -1,13 +1,15 @@
 lastupdatecheck: 0
 recentrepos:
-- /home/smabbasht/Desktop/packages/source/popcorn-desktop
 - /home/smabbasht/.config
-- /home/smabbasht/Hyprdots
+- /home/smabbasht/fyp/dashboard-repo
+- /home/smabbasht/rusty/Invaders
+- /home/smabbasht/leetcode/leetcode75
+- /home/smabbasht/leetcode/top150
+- /home/smabbasht/Desktop/Resume
+- /home/smabbasht/Desktop/packages/source/popcorn-desktop
 - /home/smabbasht/.local/share/nvim/lazy/LuaSnip
 - /home/smabbasht/.local/share/nvim/lazy/copilot.vim
-- /home/smabbasht/Desktop/Resume
 - /home/smabbasht/hobby/AoC23
 startuppopupversion: 5
 customcommandshistory: []
 hidecommandlog: false
-ignorewhitespaceindiffview: false

@@ -1,4 +1,4 @@
-function R --wraps='sudo pacman -Rns' --description 'alias R sudo pacman -Rns'
-  sudo pacman -Rns $argv
+function R --wraps='sudo dnf remove' --description 'alias R sudo dnf remove'
+  sudo dnf remove $argv
         
 end

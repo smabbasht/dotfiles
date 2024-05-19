@@ -1,4 +1,4 @@
-function syu --wraps='sudo pacman -Syu --no-confirm' --wraps='sudo pacman -Syu --noconfirm' --description 'alias syu sudo pacman -Syu --noconfirm'
-  sudo pacman -Syu --noconfirm $argv
+function syu --wraps='sudo dnf update --refresh -y' --description 'alias syu sudo dnf update --refresh -y'
+  sudo dnf update --refresh -y $argv
         
 end

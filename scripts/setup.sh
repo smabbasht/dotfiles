@@ -55,8 +55,10 @@ sudo sed -i '/font.capitalization: Font.Capitalize/d' /usr/share/sddm/themes/sug
 sudo sed -i 's/ForceHideCompletePassword=.*/ForceHideCompletePassword=true/g' /usr/share/sddm/themes/sugar-dark/theme.conf
 #
 
-# Configure i3 Touchpad through awk and find where it is written Identifier "libinput touchpad catchall"; configure it for scrolling method, natural scrolling, tapping on, tapping button map
-# sudo awk '/Identifier "libinput touchpad catchall"/{print;print "        Option \"ScrollMethod\" \"twofinger\"";print "        Option \"NaturalScrolling\" \"true\"";print "        Option \"Tapping\" \"on\"";print "        Option \"TappingButtonMap\" \"lrm\"";next}1' /usr/share/X11/xorg.conf.d/40-libinput.conf > tmp && sudo mv tmp /usr/share/X11/xorg.conf.d/40-libinput.conf
+Configure i3 Touchpad through awk and find where it is written 
+Identifier "libinput touchpad catchall"; 
+configure it for scrolling method, natural scrolling, tapping on, tapping button map
+sudo awk '/Identifier "libinput touchpad catchall"/{print;print "        Option \"ScrollMethod\" \"twofinger\"";print "        Option \"NaturalScrolling\" \"true\"";print "        Option \"Tapping\" \"on\"";print "        Option \"TappingButtonMap\" \"lrm\"";next}1' /usr/share/X11/xorg.conf.d/40-libinput.conf > tmp && sudo mv tmp /usr/share/X11/xorg.conf.d/40-libinput.conf
 
 # Install lxappearance to set themes
 # sudo pacman -S lxappearance lxsession --noconfirm

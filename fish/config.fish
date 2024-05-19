@@ -38,10 +38,10 @@ fish_add_path ~/Desktop/packages/source/tmux/
 # bash ~/.config/scripts/remind.sh
 fish_add_path ~/.config/scripts
 # bash ~/.config/scripts/n.sh
-function nvm
-    bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
-end
-nvm use 17.9.0 --silent
+# function nvm
+#     bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
+# end
+# nvm use 17.9.0 --silent
 
 #
 # Starship

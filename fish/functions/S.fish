@@ -1,4 +1,4 @@
-function S --wraps='sudo apt show' --wraps='sudo pacman --noconfirm -S' --description 'alias S sudo pacman --noconfirm -S'
-  sudo pacman --noconfirm -S $argv
+function S --wraps='sudo dnf install' --wraps='sudo dnf install -y' --description 'alias S sudo dnf install -y'
+  sudo dnf install -y $argv
         
 end
