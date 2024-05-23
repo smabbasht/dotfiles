@@ -1,3 +1,0 @@
-ETL
-FYP
-checksum_v1 = 2eacb00973c2d5c82d71ba3d4bb5ab67
