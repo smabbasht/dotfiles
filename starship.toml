@@ -1,9 +1,5 @@
 # ~/.config/starship.toml
 
-[character]
-success_symbol = "⚡"
-error_symbol = "💀"
-disabled = true
 
 
 [cmd_duration]
@@ -42,8 +38,6 @@ format = "[$symbol$version]($style) "
 style = "bold red"
 
 [shell]
-fish_indicator = '🐬'
-bash_indicator = '💡'
 unknown_indicator = 'mystery shell'
 style = 'bold yellow'
 disabled = false

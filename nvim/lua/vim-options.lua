@@ -3,7 +3,6 @@ vim.g.background = "light"
 
 vim.wo.number = true
 
--- vim.opt.guifont = "Hack Nerd Font"
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -17,7 +16,6 @@ vim.opt.wrap = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 vim.opt.hlsearch = false
@@ -53,14 +51,14 @@ vim.g.surround_no_insert_space = 1
 -- })
 
 -- [[ Highlight on yank ]]
-local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
-vim.api.nvim_create_autocmd("TextYankPost", {
-    callback = function()
-        vim.highlight.on_yank()
-    end,
-    group = highlight_group,
-    pattern = "*",
-})
+--local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+--vim.api.nvim_create_autocmd("TextYankPost", {
+    --callback = function()
+        --vim.highlight.on_yank()
+    --end,
+    --group = highlight_group,
+    --pattern = "*",
+--})
 
 --------------------------------------------------------------------------------------------------------
 -- Remap.lua
