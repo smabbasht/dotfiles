@@ -11,7 +11,7 @@ alias_command="$2"
 # Escape single quotes in alias_command
 escaped_command="${alias_command//\'/\'\\\'\'}"
 
-echo "alias '$alias_name'='$escaped_command'" >> ~/.zshrc
-echo "Alias '$alias_name' added to ~/.zshrc"
+echo "alias '$alias_name'='$escaped_command'" >> ~/.bashrc
+echo "Alias '$alias_name' added to ~/.bashrc"
 # source ~/.zshrc
 

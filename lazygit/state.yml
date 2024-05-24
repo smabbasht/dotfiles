@@ -1,15 +1,13 @@
 lastupdatecheck: 0
 recentrepos:
-- /home/smabbasht/.config
-- /home/smabbasht/fyp/dashboard-repo
-- /home/smabbasht/rusty/Invaders
-- /home/smabbasht/leetcode/leetcode75
-- /home/smabbasht/leetcode/top150
-- /home/smabbasht/Desktop/Resume
-- /home/smabbasht/Desktop/packages/source/popcorn-desktop
-- /home/smabbasht/.local/share/nvim/lazy/LuaSnip
-- /home/smabbasht/.local/share/nvim/lazy/copilot.vim
-- /home/smabbasht/hobby/AoC23
+    - /home/abbas/.config
 startuppopupversion: 5
+lastversion: 0.42.0
 customcommandshistory: []
 hidecommandlog: false
+ignorewhitespaceindiffview: false
+diffcontextsize: 3
+localbranchsortorder: recency
+remotebranchsortorder: alphabetical
+gitlogorder: topo-order
+gitlogshowgraph: always

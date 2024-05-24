@@ -21,7 +21,11 @@ return {
         lazy = false,
         opts = {
             setup = {
+                -- on_attach = function(client, bufnr)
+                --     vim.lsp.inlay_hint.enable(bufnr)
+                -- end
                 rust_analyzer = function()
+                    vim.lsp.inlay_hint(bufnr, true);
                     return true
                 end,
             },
@@ -35,7 +39,43 @@ return {
                 capabilities = capabilities
             })
             lspconfig.rust_analyzer.setup({
-                capabilities = capabilities
+                capabilities = capabilities,
+                settings = {
+                    ["rust-analyzer"] = {
+                        inlayHints = {
+                            bindingModeHints = {
+                                enable = false,
+                            },
+                            chainingHints = {
+                                enable = true,
+                            },
+                            closingBraceHints = {
+                                enable = true,
+                                minLines = 25,
+                            },
+                            closureReturnTypeHints = {
+                                enable = "never",
+                            },
+                            lifetimeElisionHints = {
+                                enable = "never",
+                                useParameterNames = false,
+                            },
+                            maxLength = 25,
+                            parameterHints = {
+                                enable = true,
+                            },
+                            reborrowHints = {
+                                enable = "never",
+                            },
+                            renderColons = true,
+                            typeHints = {
+                                enable = true,
+                                hideClosureInitialization = false,
+                                hideNamedConstructor = false,
+                            },
+                        },
+                    }
+                }
             })
             lspconfig.bashls.setup({
                 capabilities = capabilities
