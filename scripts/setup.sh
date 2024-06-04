@@ -55,10 +55,8 @@ sudo sed -i '/font.capitalization: Font.Capitalize/d' /usr/share/sddm/themes/sug
 sudo sed -i 's/ForceHideCompletePassword=.*/ForceHideCompletePassword=true/g' /usr/share/sddm/themes/sugar-dark/theme.conf
 #
 
-Configure i3 Touchpad through awk and find where it is written 
-Identifier "libinput touchpad catchall"; 
-configure it for scrolling method, natural scrolling, tapping on, tapping button map
-sudo awk '/Identifier "libinput touchpad catchall"/{print;print "        Option \"ScrollMethod\" \"twofinger\"";print "        Option \"NaturalScrolling\" \"true\"";print "        Option \"Tapping\" \"on\"";print "        Option \"TappingButtonMap\" \"lrm\"";next}1' /usr/share/X11/xorg.conf.d/40-libinput.conf > tmp && sudo mv tmp /usr/share/X11/xorg.conf.d/40-libinput.conf
+# Configure i3 Touchpad through awk and find where it is written
+sudo awk '/Identifier "libinput touchpad catchall"/{print;print "        Option \"ScrollMethod\" \"twofinger\"";print "        Option \"NaturalScrolling\" \"true\"";print "        Option \"Tapping\" \"on\"";print "        Option \"TappingButtonMap\" \"lrm\"";next}1' /usr/share/X11/xorg.conf.d/40-libinput.conf >tmp && sudo mv tmp /usr/share/X11/xorg.conf.d/40-libinput.conf
 
 # Install lxappearance to set themes
 # sudo pacman -S lxappearance lxsession --noconfirm
@@ -78,25 +76,24 @@ sudo awk '/Identifier "libinput touchpad catchall"/{print;print "        Option 
 # Installing themes
 # yay -S orchis-theme reversal-icon-theme-git breeze-default-cursor-theme --noconfirm
 
-
 # changing default grub timeout
 # yay -S update-grub --noconfirm
 # sudo sed -i 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/g' /etc/default/grub
 # sudo update-grub
 #
 # # add startx option for i3 in ~/.xinitrc
-# echo "exec i3" >> ~/.xinitrc
+# echo "exec i3" >>~/.xinitrc
 #
 # # Add the blazingly fast n
 # cd
 # git clone https://github.com/smabbasht/swift-n
 # cd swift-n
-# # update fish.config with adding this  in that somewhere "fish_add_path ~/swift-n" using awk or sed 
+# # update fish.config with adding this  in that somewhere "fish_add_path ~/swift-n" using awk or sed
 # awk '/neofetch/{print;print "fish_add_path ~/swift-n";next}1' ~/.config/fish/config.fish > tmp && mv tmp ~/.config/fish/config.fish
 #
 #
-# # bash 
-# yay -S blesh --noconfirm 
+# # bash
+# yay -S blesh --noconfirm
 # ln  -s ~/.config/bash/.blerc ~/.blerc
 # ln  -s ~/.config/bash/.bashrc ~/.bashrc
 #
@@ -121,6 +118,6 @@ sudo awk '/Identifier "libinput touchpad catchall"/{print;print "        Option 
 # exit
 #
 #
-# # Remove orphaned Packges 
+# # Remove orphaned Packges
 # sudo pacman -Qtdq | ifne sudo pacman -Rns - --noconfirm
 #
