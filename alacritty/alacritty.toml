@@ -20,6 +20,9 @@ foreground = "#fff4d2"
 text = "#bdae93"
 cursor = "#665c54"
 
+[selection]
+save_to_clipboard = true
+
 [colors.normal]
 black = "#1d2021"
 red = "#cc241d"

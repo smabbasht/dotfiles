@@ -11,11 +11,16 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source ~/.bashrc
 cargo install zoxide
 
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
 sudo snap install gh
 
 sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt update
 sudo apt install -y neovim --fix-missing
+
+sudo apt install tmux
 
 sudo add-apt-repository ppa:mmstick76/alacritty
 sudo apt update
@@ -28,6 +33,7 @@ sudo apt update
 sudo apt install -y i3 --fix-missing
 
 sudo apt install -y gnome-shell-extension-manager --fix-missing
+sudo apt install -y gnome-tweaks --fix-missing
 
 sudo add-apt-repository ppa:codejamninja/jam-os
 sudo apt-get update
@@ -37,3 +43,6 @@ mkdir ~/.bin
 curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/.bin
 cd ~/.bin
 ./oh-my-posh font install
+
+rm -rvf ~/.bashrc
+ln -s ~/.config/bash/.bashrc ~/.bashrc
