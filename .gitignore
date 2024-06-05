@@ -1,7 +1,8 @@
 whatsdesk*
+tiling*/*
 scripts/.gittoken
 google-chrome*/*
-*ubuntu*
+*ubuntu-desktop*
 *gnome*
 Code*
 nvim/*
