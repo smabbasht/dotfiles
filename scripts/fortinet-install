@@ -1,0 +1,13 @@
+#! /bin/bash
+
+mkdir -p ~/packages/deb/
+cd ~/packages/deb/
+
+wget http://http.us.debian.org/debian/pool/main/libd/libdbusmenu/libdbusmenu-gtk4_18.10.20180917~bzr490+repack1-1_amd64.deb
+wget http://ftp.kr.debian.org/debian/pool/main/liba/libayatana-appindicator/libayatana-appindicator1_0.5.5-2+deb11u2_amd64.deb
+wget http://ftp.cn.debian.org/debian/pool/main/liba/libayatana-indicator/libayatana-indicator7_0.8.4-1+deb11u2_amd64.deb
+
+wget -O - https://repo.fortinet.com/repo/forticlient/7.4/ubuntu22/DEB-GPG-KEY | gpg --dearmor | sudo tee /usr/share/keyrings/repo.fortinet.com.gpg
+sudo echo "deb [arch=amd64 signed-by=/usr/share/keyrings/repo.fortinet.com.gpg] https://repo.fortinet.com/repo/forticlient/7.4/ubuntu22/ stable non-free" >/etc/apt/sources.list.d/repo.fortinet.com.list
+sudo apt-get update
+sudo apt install forticlient

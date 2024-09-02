@@ -21,6 +21,14 @@ sudo apt update
 sudo apt install -y neovim --fix-missing
 
 sudo apt install tmux
+mkdir -p ~/.tmux/plugins
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+tmux start-server
+tmux new-session -d
+tmux source ~/.config/tmux/.tmux.conf
+ln ~/.config/tmux/.tmux.conf ~/.tmux.conf
+bash ~/.tmux/plugins/tpm/scripts/install_plugins.sh
+tmux kill-server
 
 sudo add-apt-repository ppa:mmstick76/alacritty
 sudo apt update
@@ -43,6 +51,10 @@ mkdir ~/.bin
 curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/.bin
 cd ~/.bin
 ./oh-my-posh font install
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+source ~/.bashrc
+nvm install stable
 
 rm -rvf ~/.bashrc
 ln -s ~/.config/bash/.bashrc ~/.bashrc
