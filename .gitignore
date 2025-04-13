@@ -1,3 +1,21 @@
+qt*
+waybar.hyde/
+xsettingsd/
+teams-for-linux*
+nwg-look/
+.dmenurc
+baloo*
+gtk-*
+knfsshare
+code-flags.conf
+cfg_backups*
+YouTube*
+google-chrome*
+mako*
+micro*
+menus*
+pavucontrol*
+Kvantum*
 .gsd-keyboard.settings-ported
 .vimrc
 Android Open Source Project/*
